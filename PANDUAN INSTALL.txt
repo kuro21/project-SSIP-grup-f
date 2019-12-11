@@ -1,0 +1,10 @@
+### PANDUAN CARA INSTALL
+copy project ke localhost ( xampp/htdocs/kios )
+buat database dengan nama "kios"
+import database
+konfigurasinya ada di admin/config.php
+
+akses : localhost/kios
+
+Username : admin
+Password : 1234
