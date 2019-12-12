@@ -95,7 +95,7 @@ $start = ($page - 1) * $per_hal;
 		<td>			
 		<?php 
 		
-			$x=mysqli_query($conn, "SELECT sum(modal) as total from barang");	
+			$x=mysqli_query($conn, "SELECT sum(modal*jumlah) as total from barang");	
 			$xx=mysqli_fetch_array($x);			
 			echo "<b> Rp.". number_format($xx['total']).",-</b>";		
 		?>
