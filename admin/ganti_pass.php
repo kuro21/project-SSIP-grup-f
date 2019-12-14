@@ -6,13 +6,13 @@ include 'header.php';
 <br/><br/>
 <?php 
 if(isset($_GET['pesan'])){
-	$pesan=mysqli_real_escape_string($_GET['pesan']);
+	$pesan=mysqli_real_escape_string($conn, $_GET['pesan']);
 	if($pesan=="gagal"){
 		echo "<div class='alert alert-danger'>Password gagal di ganti !!     Periksa Kembali Password yang anda masukkan !!</div>";
 	}else if($pesan=="tdksama"){
 		echo "<div class='alert alert-warning'>Password yang anda masukkan tidak sesuai  !!     silahkan ulangi !! </div>";
 	}else if($pesan=="oke"){
-		echo "<div class='alert alert-success'>Password yang anda masukkan tidak sesuai  !!     silahkan ulangi !! </div>";
+		echo "<div class='alert alert-success'>Ganti Password telah berhasil !!</div>";
 	}
 }
 ?>
