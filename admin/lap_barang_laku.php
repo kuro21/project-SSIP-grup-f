@@ -9,7 +9,7 @@ $pdf->SetMargins(2,1,1);
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','B',11);
-$pdf->Image('../logo/spongebob.JPG',1,1,2,2);
+$pdf->Image('../logo/bct.JPG',1,1,2,2);
 $pdf->SetX(4);            
 $pdf->MultiCell(19.5,0.5,'TOKO SEPATU BCT',0,'L');
 $pdf->SetX(4);
@@ -57,7 +57,7 @@ while($lihat=mysqli_fetch_array($query)){
 $q=mysqli_query($conn, "SELECT sum(total_harga) as total from barang_laku where tanggal=".$tanggal);
 // select sum(total_harga) as total from barang_laku where tanggal='$tanggal'
 while($total=mysqli_fetch_array($q)){
-	$pdf->Cell(17, 0.8, "Total Pendapatan", 1, 0,'C');		
+	$pdf->Cell(17, 0.8, "Total", 1, 0,'C');		
 	$pdf->Cell(4.5, 0.8, "Rp. ".number_format($total['total'])." ,-", 1, 0,'C');	
 }
 $qu=mysqli_query($conn, "SELECT sum(laba) as total_laba from barang_laku where tanggal=".$tanggal);
@@ -65,7 +65,7 @@ $qu=mysqli_query($conn, "SELECT sum(laba) as total_laba from barang_laku where t
 while($tl=mysqli_fetch_array($qu)){
 	$pdf->Cell(4, 0.8, "Rp. ".number_format($tl['total_laba'])." ,-", 1, 1,'C');	
 }
-$pdf->Output("laporan_buku.pdf","I");
+$pdf->Output("Laporan Penjualan.pdf","I");
 
 ?>
 

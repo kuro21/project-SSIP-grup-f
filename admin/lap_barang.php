@@ -8,7 +8,7 @@ $pdf->SetMargins(2,1,1);
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','B',11);
-$pdf->Image('../logo/spongebob.JPG',1,1,2,2);
+$pdf->Image('../logo/bct.JPG',1,1,2,2);
 $pdf->SetX(4);            
 $pdf->MultiCell(19.5,0.5,'TOKO SEPATU BCT',0,'L');
 $pdf->SetX(4);
@@ -45,8 +45,8 @@ while($lihat=mysqli_fetch_array($query)){
 	$pdf->Cell(7, 0.8, $lihat['nama'],1, 0, 'C');
 	$pdf->Cell(3, 0.8, $lihat['jenis'], 1, 0,'C');
 	$pdf->Cell(4, 0.8, $lihat['suplier'],1, 0, 'C');
-	$pdf->Cell(4.5, 0.8, $lihat['modal'], 1, 0,'C');
-	$pdf->Cell(4.5, 0.8, $lihat['harga'],1, 0, 'C');
+	$pdf->Cell(4.5, 0.8, "Rp. ".number_format($lihat['modal'])." ,-", 1, 0,'C');
+	$pdf->Cell(4.5, 0.8, "Rp. ".number_format($lihat['harga'])." ,-",1, 0, 'C');
 	$pdf->Cell(2, 0.8, $lihat['jumlah'], 1, 1,'C');
 
 	$no++;
@@ -56,7 +56,7 @@ while($total=mysqli_fetch_array($q)){
 	$pdf->Cell(19.5, 0.8, "Total Modal", 1, 0,'C');		
 	$pdf->Cell(6.5, 0.8, "Rp. ".number_format($total['total'])." ,-", 1, 0,'C');	
 }
-$pdf->Output("laporan_buku.pdf","I");
+$pdf->Output("Laporan Data Barang.pdf","I");
 
 ?>
 
