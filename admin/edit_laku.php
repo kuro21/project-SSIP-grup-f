@@ -6,7 +6,7 @@ include 'header.php';
 <a class="btn" href="barang_laku.php"><span class="glyphicon glyphicon-arrow-left"></span>  Kembali</a>
 
 <?php
-$id_brg=mysqli_real_escape_string($_GET['id']);
+$id_brg=mysqli_real_escape_string($conn, $_GET['id']);
 
 $det=mysqli_query($conn, "SELECT * from barang_laku where id='$id_brg'")or die(mysql_error());
 while($d=mysqli_fetch_array($det)){
