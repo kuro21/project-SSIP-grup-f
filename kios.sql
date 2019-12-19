@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2019 at 03:10 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Generation Time: Dec 18, 2019 at 05:46 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -36,35 +36,33 @@ CREATE TABLE `barang` (
   `modal` int(11) NOT NULL,
   `harga` int(11) NOT NULL,
   `jumlah` int(11) NOT NULL,
-  `sisa` int(11) NOT NULL,
-  `total_modal` varchar(30) NOT NULL
+  `sisa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id`, `nama`, `jenis`, `suplier`, `modal`, `harga`, `jumlah`, `sisa`, `total_modal`) VALUES
-(14, 'Nike Airmax', 'Sepatu', 'PT. Nike Indonesia', 1000000, 1100000, 69, 20, ''),
-(17, 'Nike Air Jordan', 'Sepatu', 'PT. Nike Indonesia', 2000000, 2200000, 1, 10, ''),
-(19, 'Nike Mercurial', 'Sepatu', 'PT. Nike Indonesia', 900000, 1000000, 116, 24, ''),
-(20, 'Nike Phantom', 'Sepatu', 'PT. Nike Indonesia', 950000, 1000000, 61, 1000, ''),
-(21, 'Nike Air Force', 'Sepatu', 'PT. Nike Indonesia', 1200000, 1300000, 30, 900, ''),
-(22, 'Adidas Ultraboost', 'Sepatu', 'PT. Adidas Indonesia', 2500000, 2600000, 45, 900, ''),
-(23, 'Adidas StanSmith', 'Sepatu', 'PT. Adidas Indonesia', 800000, 1000000, 105, 1000, ''),
-(24, 'Adidas Continential', 'Sepatu', 'PT. Adidas Indonesia', 900000, 970000, 80, 800, ''),
-(25, 'Adidas Predator', 'Sepatu', 'PT. Adidas Indonesia', 800000, 900000, 21, 500, ''),
-(27, 'Adidas X19', 'Sepatu', 'PT. Adidas Indonesia', 750000, 800000, 50, 600, ''),
-(28, 'Specs Garuda Attack', 'Sepatu', 'PT. Specs Indonesia', 400000, 450000, 0, 200, ''),
-(29, 'Specs Lightspeed', 'Sepatu', 'PT. Specs Indonesia', 400000, 440000, 22, 150, ''),
-(30, 'Specs Metasala', 'Sepatu', 'PT. Specs Indonesia', 340000, 380000, 120, 150, ''),
-(31, 'Ortuseight Jogosala', 'Sepatu', 'PT. Ortuseight Indonesia', 400000, 420000, 0, 150, ''),
-(32, 'Ortuseight Oracle', 'Sepatu', 'PT. Ortuseight Indonesia', 4200000, 4800000, 2, 6, ''),
-(33, 'Ortuseight Mavrick', 'Sepatu', 'PT. Ortuseight Indonesia', 330000, 370000, 20, 40, ''),
-(34, 'Mizuno Basara', 'Sepatu', 'PT. Mizuno Indonesia', 500000, 550000, 5, 25, ''),
-(35, 'Mizuno Blaze', 'Sepatu', 'PT. Mizuno Indonesia', 600000, 650000, 23, 50, ''),
-(36, 'Mizuno Arlos', 'Sepatu', 'PT. Mizuno Indonesia', 400000, 450000, 30, 80, ''),
-(37, 'Mizuno Army', 'Sepatu', 'PT. Mizuno Indonesia', 700000, 770000, 5, 15, '');
+INSERT INTO `barang` (`id`, `nama`, `jenis`, `suplier`, `modal`, `harga`, `jumlah`, `sisa`) VALUES
+(14, 'Nike Airmax', 'Sepatu', 'PT. Nike Indonesia', 1000000, 1100000, 69, 20),
+(19, 'Nike Mercurial', 'Sepatu', 'PT. Nike Indonesia', 900000, 1000000, 106, 24),
+(20, 'Nike Phantom', 'Sepatu', 'PT. Nike Indonesia', 950000, 1000000, 61, 1000),
+(21, 'Nike Air Force', 'Sepatu', 'PT. Nike Indonesia', 1200000, 1300000, 30, 900),
+(22, 'Adidas Ultraboost', 'Sepatu', 'PT. Adidas Indonesia', 2500000, 2600000, 45, 900),
+(23, 'Adidas StanSmith', 'Sepatu', 'PT. Adidas Indonesia', 800000, 1000000, 105, 1000),
+(24, 'Adidas Continential', 'Sepatu', 'PT. Adidas Indonesia', 900000, 970000, 80, 800),
+(25, 'Adidas Predator', 'Sepatu', 'PT. Adidas Indonesia', 800000, 900000, 21, 500),
+(27, 'Adidas X19', 'Sepatu', 'PT. Adidas Indonesia', 750000, 800000, 80, 600),
+(28, 'Specs Garuda Attack', 'Sepatu', 'PT. Specs Indonesia', 400000, 450000, 21, 200),
+(29, 'Specs Lightspeed', 'Sepatu', 'PT. Specs Indonesia', 400000, 440000, 22, 150),
+(30, 'Specs Metasala', 'Sepatu', 'PT. Specs Indonesia', 340000, 380000, 120, 150),
+(31, 'Ortuseight Jogosala', 'Sepatu', 'PT. Ortuseight Indonesia', 400000, 420000, 10, 150),
+(32, 'Ortuseight Oracle', 'Sepatu', 'PT. Ortuseight Indonesia', 4200000, 4800000, 2, 6),
+(33, 'Ortuseight Mavrick', 'Sepatu', 'PT. Ortuseight Indonesia', 330000, 370000, 20, 40),
+(34, 'Mizuno Basara', 'Sepatu', 'PT. Mizuno Indonesia', 500000, 550000, 5, 25),
+(35, 'Mizuno Blaze', 'Sepatu', 'PT. Mizuno Indonesia', 600000, 650000, 23, 50),
+(36, 'Mizuno Arlos', 'Sepatu', 'PT. Mizuno Indonesia', 400000, 450000, 30, 80),
+(37, 'Mizuno Army', 'Sepatu', 'PT. Mizuno Indonesia', 700000, 770000, 5, 15);
 
 -- --------------------------------------------------------
 
@@ -96,7 +94,6 @@ INSERT INTO `barang_laku` (`id`, `tanggal`, `nama`, `jumlah`, `harga`, `total_ha
 (71, '2019-12-12', 'Adidas StanSmith', 70, 1000000, 70000000, 14000000),
 (72, '2019-12-12', 'Adidas Continential', 30, 970000, 29100000, 2100000),
 (73, '2019-12-12', 'Adidas Predator', 120, 900000, 108000000, 12000000),
-(74, '2019-12-12', 'Adidas X19', 30, 800000, 24000000, 1500000),
 (75, '2019-12-13', 'Specs Garuda Attack', 30, 450000, 13500000, 1500000),
 (76, '2019-12-13', 'Specs Lightspeed', 100, 440000, 44000000, 4000000),
 (77, '2019-12-13', 'Specs Metasala', 20, 380000, 7600000, 800000),
@@ -122,11 +119,12 @@ INSERT INTO `barang_laku` (`id`, `tanggal`, `nama`, `jumlah`, `harga`, `total_ha
 (98, '2019-12-18', 'Nike Air Force', 3, 1300000, 3900000, 300000),
 (99, '2019-12-18', 'Nike Mercurial', 4, 1000000, 4000000, 400000),
 (100, '2019-12-18', 'Mizuno Blaze', 2, 650000, 1300000, 100000),
-(101, '2019-12-19', 'Mizuno Arlos', 10, 450000, 4500000, 500000),
+(101, '2019-12-18', 'Mizuno Arlos', 10, 450000, 4500000, 500000),
 (102, '2019-12-19', 'Nike Airmax', 3, 1100000, 3300000, 300000),
 (103, '2019-12-19', 'Nike Phantom', 4, 1000000, 4000000, 200000),
 (104, '2019-12-19', 'Adidas Predator', 4, 900000, 3600000, 400000),
-(105, '2019-12-19', 'Specs Metasala', 4, 380000, 1520000, 160000);
+(105, '2019-12-19', 'Specs Metasala', 4, 380000, 1520000, 160000),
+(106, '2019-12-16', 'Nike Mercurial', 10, 1000000, 10000000, 1000000);
 
 -- --------------------------------------------------------
 
@@ -168,7 +166,7 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`id`, `uname`, `pass`, `foto`) VALUES
 (9, 'kuro', 'bakabaka', 'kuro.jpg'),
-(11, 'admin', '123', 'admin.jpeg');
+(11, 'admin', 'admin', 'bct2.jpg');
 
 --
 -- Indexes for dumped tables
@@ -212,7 +210,7 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `barang_laku`
 --
 ALTER TABLE `barang_laku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `pengeluaran`
